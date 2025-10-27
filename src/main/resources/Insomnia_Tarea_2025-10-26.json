@@ -1,0 +1,394 @@
+type: collection.insomnia.rest/5.0
+name: TareaProyecto
+meta:
+  id: wrk_9e54665b72f646d29ccd9cc5d75a0765
+  created: 1761410149057
+  modified: 1761410149057
+  description: ""
+collection:
+  - url: "{{ base_url }}/auth/login"
+    name: "Login user "
+    meta:
+      id: req_3dcee478919549cf9415b974a65e3028
+      created: 1761410149094
+      modified: 1761537366139
+      isPrivate: false
+      description: ""
+      sortKey: -1761410149094
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "super.admin@gmail.com", 
+        	"password": "superadmin123"
+        }
+    headers:
+      - id: pair_1ea3a99cbba0430b95378166326eddcb
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+      - id: pair_51d00c4aa446421bb26910674dd834cc
+        name: User-Agent
+        value: insomnia/9.1.1
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ base_url }}/api/categorias"
+    name: Registrar Categoría
+    meta:
+      id: req_abcd0ef1c0964a29982de53af0ca687a
+      created: 1761410149098
+      modified: 1761533002956
+      isPrivate: false
+      description: ""
+      sortKey: -1761410149099
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nombre": "Futbol2",
+          "descripcion": "Productos electrónicos"
+        }
+    headers:
+      - id: pair_d8ecb51729a54a2a842c04c44048e78a
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+      - id: pair_88374561ff2c4ecc9eabf5258934a16d
+        name: User-Agent
+        value: insomnia/11.6.2
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: "{% response 'body', 'req_3dcee478919549cf9415b974a65e3028',
+        'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ base_url }}/api/productos"
+    name: Registrar Producto
+    meta:
+      id: req_ac43a8eb084d432aaab9f20e462e359c
+      created: 1761410149101
+      modified: 1761532976401
+      isPrivate: false
+      description: ""
+      sortKey: -1761410149101
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nombre": "Laptop FeLIPE",
+          "descripcion": "Laptop profesional de 18GB RAM y 512GB SSD",
+          "precio": 899.99,
+          "cantidadEnStock": 15,
+          "categoria": {
+            "id": 9
+          }
+        }
+    headers:
+      - id: pair_8aa2bc8569ad4d7784c8fa379b142b30
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+      - id: pair_7012adb34b1c456c80276f1082830bf0
+        name: User-Agent
+        value: insomnia/11.6.2
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: "{% response 'body', 'req_3dcee478919549cf9415b974a65e3028',
+        'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ base_url }}/api/productos/7"
+    name: Actualizar Producto
+    meta:
+      id: req_12ba92cafd0c4a8996491b789e69766a
+      created: 1761410149104
+      modified: 1761533762697
+      isPrivate: false
+      description: ""
+      sortKey: -1761410149104
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "nombre": "Pepitop",
+          "descripcion": "Nueva descripción",
+          "precio": 50.0,
+          "cantidadEnStock": 10
+        }
+    headers:
+      - id: pair_3324401d16a54121a73d5d017595178a
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+      - id: pair_3a83f6d321354ede997f5a6289f481b3
+        name: User-Agent
+        value: insomnia/11.6.2
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: "{% response 'body', 'req_3dcee478919549cf9415b974a65e3028',
+        'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ base_url }}/api/productos/10"
+    name: Borrar Producto
+    meta:
+      id: req_b87830acb3274feda467d1c07dab346d
+      created: 1761410149106
+      modified: 1761533733686
+      isPrivate: false
+      description: ""
+      sortKey: -1761410149106
+    method: DELETE
+    headers:
+      - id: pair_afb160acd99143e99d617bdacd2a4ca7
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+      - id: pair_ed76143fae434577a5d69451708c8678
+        name: User-Agent
+        value: insomnia/11.6.2
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: "{% response 'body', 'req_3dcee478919549cf9415b974a65e3028',
+        'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ base_url }}/api/productos"
+    name: Listar Productos
+    meta:
+      id: req_08a58116d4114dd68d7e180784211b38
+      created: 1761410149109
+      modified: 1761422418028
+      isPrivate: false
+      description: ""
+      sortKey: -1761410149109
+    method: GET
+    headers:
+      - id: pair_ce55615b42494ce78937a6c30aff2b8c
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+      - id: pair_52fccb3f649543a0aac4862f9cfc61d6
+        name: User-Agent
+        value: insomnia/11.6.2
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: "{% response 'body', 'req_3dcee478919549cf9415b974a65e3028',
+        'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ base_url }}/api/categorias/16"
+    name: Actualizar Categoría
+    meta:
+      id: req_16ca5112d21444dbaa91d03b38df8075
+      created: 1761410149111
+      modified: 1761533066127
+      isPrivate: false
+      description: ""
+      sortKey: -1761410149111
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "nombre": "FEPITo",
+          "descripcion": "Productos tecnológicos actualizados"
+        }
+    headers:
+      - id: pair_1b4050bceb444f628c789bc9d6b62a38
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+      - id: pair_a2ad391d0caf42d1b46e49e4c9f549de
+        name: User-Agent
+        value: insomnia/11.6.2
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: "{% response 'body', 'req_3dcee478919549cf9415b974a65e3028',
+        'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ base_url }}/api/categorias/14"
+    name: Borrar Categoría
+    meta:
+      id: req_3ffc2c6f28684564a6ed8db7ada35182
+      created: 1761410149114
+      modified: 1761533741019
+      isPrivate: false
+      description: ""
+      sortKey: -1761410149114
+    method: DELETE
+    headers:
+      - id: pair_e5f26fbc07054e6196efd3ed9802f9d9
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+      - id: pair_6d05ddcb2c9d44cdb385f980145b1296
+        name: User-Agent
+        value: insomnia/11.6.2
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: "{% response 'body', 'req_3dcee478919549cf9415b974a65e3028',
+        'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ base_url }}/api/categorias"
+    name: Listar Categorías
+    meta:
+      id: req_4ddcb0a1661e4a4a8062102a312ee3e2
+      created: 1761410149116
+      modified: 1761422724666
+      isPrivate: false
+      description: ""
+      sortKey: -1761410149116
+    method: GET
+    headers:
+      - id: pair_cee4e1b9896846799a3016ae7a4019fb
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+      - id: pair_595f3e97bbaa471bb620aff336ad2627
+        name: User-Agent
+        value: insomnia/11.6.2
+        description: ""
+        disabled: false
+    authentication:
+      type: bearer
+      token: "{% response 'body', 'req_3dcee478919549cf9415b974a65e3028',
+        'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/users/me
+    name: Ver usuario autenticado
+    meta:
+      id: req_cb375238b5de40afb7e91915d1b9ed36
+      created: 1761419129028
+      modified: 1761421667864
+      isPrivate: false
+      description: ""
+      sortKey: -1761419129028
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.2
+    authentication:
+      type: bearer
+      token: "{% response 'body', 'req_3dcee478919549cf9415b974a65e3028',
+        'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_7612d270010b87e23d98d9111ff2f7c76cc2fa64
+    created: 1761410149125
+    modified: 1761430454856
+  cookies:
+    - key: JSESSIONID
+      value: B12D8DA6FF2B6907EC134AC4D633C890
+      domain: localhost
+      path: /
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-10-25T21:05:45.331Z
+      lastAccessed: 2025-10-25T22:14:14.854Z
+      id: 9dc85a5d-68d0-4eea-bc95-f5256f872da8
+environments:
+  name: Base Environment
+  meta:
+    id: env_28d7dd019edc4d72b9e91932f210ae40
+    created: 1761410149068
+    modified: 1761410149068
+    isPrivate: false
+  data:
+    base_url: http://localhost:8080
+    token: ""
