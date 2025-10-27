@@ -87,7 +87,7 @@ collection:
     meta:
       id: req_ac43a8eb084d432aaab9f20e462e359c
       created: 1761410149101
-      modified: 1761532976401
+      modified: 1761538159867
       isPrivate: false
       description: ""
       sortKey: -1761410149101
@@ -101,7 +101,7 @@ collection:
           "precio": 899.99,
           "cantidadEnStock": 15,
           "categoria": {
-            "id": 9
+            "id": 19
           }
         }
     headers:
@@ -169,12 +169,12 @@ collection:
         send: true
         store: true
       rebuildPath: true
-  - url: "{{ base_url }}/api/productos/10"
+  - url: "{{ base_url }}/api/productos/13"
     name: Borrar Producto
     meta:
       id: req_b87830acb3274feda467d1c07dab346d
       created: 1761410149106
-      modified: 1761533733686
+      modified: 1761538202904
       isPrivate: false
       description: ""
       sortKey: -1761410149106
@@ -275,12 +275,12 @@ collection:
         send: true
         store: true
       rebuildPath: true
-  - url: "{{ base_url }}/api/categorias/14"
+  - url: "{{ base_url }}/api/categorias/19"
     name: Borrar Categoría
     meta:
       id: req_3ffc2c6f28684564a6ed8db7ada35182
       created: 1761410149114
-      modified: 1761533741019
+      modified: 1761538424673
       isPrivate: false
       description: ""
       sortKey: -1761410149114
