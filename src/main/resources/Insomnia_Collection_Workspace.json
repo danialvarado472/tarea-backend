@@ -1,0 +1,173 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-10-25T11:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2025.3.0",
+  "resources": [
+    {
+      "_id": "wrk_1",
+      "_type": "workspace",
+      "name": "TareaProyecto",
+      "description": "Workspace para probar API de Productos y Categorias y logins para tarea Proyecto 3",
+      "scope": "collection"
+    },
+    {
+      "_id": "env_1",
+      "_type": "environment",
+      "name": "Base Environment",
+      "parentId": "wrk_1",
+      "data": {
+        "base_url": "http://localhost:8080",
+        "token": ""
+      }
+    },
+    {
+      "_id": "req_login_admin",
+      "_type": "request",
+      "name": "Login SUPER-ADMIN",
+      "parentId": "wrk_1",
+      "method": "POST",
+      "url": "{{ base_url }}/api/auth/login",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"username\": \"admin\",\n  \"password\": \"admin123\"\n}"
+      },
+      "authentication": {},
+      "headers": []
+    },
+    {
+      "_id": "req_login_user",
+      "_type": "request",
+      "name": "Login USER",
+      "parentId": "wrk_1",
+      "method": "POST",
+      "url": "{{ base_url }}/api/auth/login",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"username\": \"user\",\n  \"password\": \"user123\"\n}"
+      },
+      "authentication": {},
+      "headers": []
+    },
+    {
+      "_id": "req_create_categoria",
+      "_type": "request",
+      "name": "Crear Categor\u00eda",
+      "parentId": "wrk_1",
+      "method": "POST",
+      "url": "{{ base_url }}/api/categorias",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nombre\": \"Electr\u00f3nica\",\n  \"descripcion\": \"Productos electr\u00f3nicos\"\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "headers": []
+    },
+    {
+      "_id": "req_create_producto",
+      "_type": "request",
+      "name": "Crear Producto",
+      "parentId": "wrk_1",
+      "method": "POST",
+      "url": "{{ base_url }}/api/productos",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nombre\": \"Smartphone\",\n  \"descripcion\": \"Smartphone de \u00faltima generaci\u00f3n\",\n  \"precio\": 499.99,\n  \"cantidadEnStock\": 100,\n  \"categoria\": {\n    \"id\": 1\n  }\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "headers": []
+    },
+    {
+      "_id": "req_update_producto",
+      "_type": "request",
+      "name": "Actualizar Producto",
+      "parentId": "wrk_1",
+      "method": "PUT",
+      "url": "{{ base_url }}/api/productos/1",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nombre\": \"Smartphone Pro\",\n  \"descripcion\": \"Smartphone con mejores caracter\u00edsticas\",\n  \"precio\": 599.99,\n  \"cantidadEnStock\": 80,\n  \"categoria\": {\n    \"id\": 1\n  }\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "headers": []
+    },
+    {
+      "_id": "req_delete_producto",
+      "_type": "request",
+      "name": "Borrar Producto",
+      "parentId": "wrk_1",
+      "method": "DELETE",
+      "url": "{{ base_url }}/api/productos/1",
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "headers": []
+    },
+    {
+      "_id": "req_list_producto",
+      "_type": "request",
+      "name": "Listar Productos",
+      "parentId": "wrk_1",
+      "method": "GET",
+      "url": "{{ base_url }}/api/productos",
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "headers": []
+    },
+    {
+      "_id": "req_update_categoria",
+      "_type": "request",
+      "name": "Actualizar Categor\u00eda",
+      "parentId": "wrk_1",
+      "method": "PUT",
+      "url": "{{ base_url }}/api/categorias/1",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nombre\": \"Electr\u00f3nica Avanzada\",\n  \"descripcion\": \"Productos electr\u00f3nicos de \u00faltima tecnolog\u00eda\"\n}"
+      },
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "headers": []
+    },
+    {
+      "_id": "req_delete_categoria",
+      "_type": "request",
+      "name": "Borrar Categor\u00eda",
+      "parentId": "wrk_1",
+      "method": "DELETE",
+      "url": "{{ base_url }}/api/categorias/1",
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "headers": []
+    },
+    {
+      "_id": "req_list_categoria",
+      "_type": "request",
+      "name": "Listar Categor\u00edas",
+      "parentId": "wrk_1",
+      "method": "GET",
+      "url": "{{ base_url }}/api/categorias",
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}"
+      },
+      "headers": []
+    }
+  ]
+}
